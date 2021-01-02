@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from './/Home'
 import Search from './Search'
 import Favorites from './Favorites'
-
 export default function Container() {
 return(
     <div>

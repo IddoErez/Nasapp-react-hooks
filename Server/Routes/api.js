@@ -12,6 +12,13 @@ router.post('/image', async (req, res) => {
     let pictures = await Picture.find({})
     res.send(pictures)
 })
+router.get('/images/:id', async (req, res) => {
+    console.log("aaabbb", req.params)
+    let {id}= req.params
+    let picture = await Picture.findById({_id: id})
+    res.send(picture)
+})
+
 router.delete('/image/:id', async (req, res) => {
     console.log("16", req.params)
     let {id}= req.params

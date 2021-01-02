@@ -14,8 +14,8 @@ export default function Home() {
     return (
         <div id="picOfDayInfo">
             {picInfo.media_type === "image"
-            ? <MediaCard picInfo={picInfo} />
-            : <Media picInfo={picInfo} />}
+            ? <MediaCard key={picInfo.id} picInfo={picInfo} />
+            : <Media  key={picInfo.id}  picInfo={picInfo} />}
         </div>
     )
 }

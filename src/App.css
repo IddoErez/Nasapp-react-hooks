@@ -4,15 +4,6 @@
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
-
-/* #picOfDayInfo {
-  text-align: left;
-}
-
-.picOfDayInfo {
-  max-width: 20%;
-  height: auto;
-} */
 .picTitle{
   text-align: center;
 }
@@ -22,7 +13,6 @@ padding-left: 170px;}
 #unLikeButton{
   padding-left: 170px;
 }
-
 #searchButton{
   height: 34px;
 }
@@ -30,7 +20,6 @@ padding-left: 170px;}
   width: 413px;
   height:300px;
 }
-
 #searchInput{
  width: 87%;
  height: 30px;
