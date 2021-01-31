@@ -1,16 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 const axios = require('axios')
+
 export default function MediaCard(props) {
      const savePic = async () => {
         alert("picture saved to favorites")
-        return await axios.post("http://localhost:4200/image", props.picInfo)
+        return await axios.post("http://localhost:3200/image", props.picInfo)
     }
     const getDescription = async () => {
-        props.getDescription(props.pics._id)
+        props.getDescription(props.pic._id)
     }
-    const deletePic = async () => {
-             props.deletePic(props.pics._id)
+
+        const deletePic = async () => {
+             props.deletePic(props.pic._id)
      }
+
     return (
         <div id="picture">
                 {window.location.pathname === "/home"
@@ -26,14 +30,14 @@ export default function MediaCard(props) {
                     <i className="fas fa-thumbs-up fa-2x"  id="likeButton" onClick={savePic}></i>
                     </div>)
                 : window.location.pathname === "/favorites"
-                ? (<div><h2 className="picTitle">{props.pics.title}</h2>
-                    <img className="picOfDay" src={props.pics.url} onClick={getDescription} id="pic"></img>
+                ? (<div><h2 className="picTitle">{props.pic.title}</h2>
+                     <img className="picOfDay" src={props.pic.url} onClick={getDescription} id="pic"></img>
                     <i className="fas fa-thumbs-down fa-2x"  id="unLikeButton" onClick={deletePic}></i>
                     </div>)
                 :(<div>
-                    <h2 className="picTitle">{props.picInfo.title}</h2>
-                    <img className="picOfDay" src={props.picInfo.url} id="pic"></img>
-                    <p className="picDescription">{props.picInfo.description}</p>
+                    <h2 className="picTitle">{props.pic.title}</h2>
+                    <img className="picOfDay" src={props.pic.url} id="pic"></img>
+                    <p className="picDescription">{props.pic.description}</p>
                 </div>)
             }
         </div>
