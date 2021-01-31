@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const Picture = require("../Models/Pictures")
+const Picture = require("./Models/Pictures")
 
 router.post('/image', async (req, res) => {
     let pictureDoc = new Picture({...req.body})
