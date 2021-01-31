@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const api = require('./server/routes/api')
+const api = require('./Server/Routes/api')
 const mongoose = require('mongoose')
 const path = require('path')
 mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/picturesDB')
