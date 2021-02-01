@@ -8,12 +8,12 @@ export default function Favorites(props) {
  
   const deletePic = async (id) => {
     alert("picture deleted from favorites")
-    const response = await axios.delete(`http://localhost:4500/image/${id}`)
+    const response = await axios.delete(`/image/${id}`)
     setPics(response.data)
   }
 
    const getDescription = async (id) => {
-    const response = await axios.get(`http://localhost:4500/images/${id}`)
+    const response = await axios.get(`/images/${id}`)
     let picture = {}
     picture.description = response.data.description
     picture.title = response.data.title
@@ -23,7 +23,7 @@ export default function Favorites(props) {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get('http://localhost:4500/images')
+      const response = await axios.get('/images')
       setPics(response.data);
     })()
   }, [])

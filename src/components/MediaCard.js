@@ -5,7 +5,7 @@ const axios = require('axios')
 export default function MediaCard(props) {
      const savePic = async () => {
         alert("picture saved to favorites")
-        return await axios.post("http://localhost:4500/image", props.picInfo)
+        return await axios.post('/4500/image', props.picInfo)
     }
     const getDescription = async () => {
         props.getDescription(props.pic._id)
