@@ -1,8 +1,6 @@
 const express = require('express')
 const app = express()
-// const api = require('./server/routes/api')
-const router = require('./server/routes/api')
-const bodyParser = require('body-parser')
+const api = require('./server/routes/api')
 const mongoose = require('mongoose')
 const path = require('path')
 mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/picturesDB')
@@ -14,9 +12,9 @@ mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost/picturesDB')
 //     next()
 // })
 app.use(express.static(path.join(__dirname, 'build')));
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use('/', router)
+app.use('/', api)
 
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
